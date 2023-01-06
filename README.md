@@ -1,2 +1,2 @@
 # weather23
-React Weather App
+React v18 Weather App Using Typescript and TailwindCSS
