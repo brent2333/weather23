@@ -10,7 +10,7 @@ const user = {
   const navigation = [{ name: "Dashboard", href: "/", current: true }];
   const userNavigation = [
     { name: "My LinkedIn", href: "https://www.linkedin.com/in/brent-lawson-486529a/" },
-    { name: "About Me", href: "#" },
+    { name: "About Me", href: "/about" },
     { name: "How it's Made", href: "#" },
   ];
   

@@ -14,8 +14,8 @@ const Dashboard = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="grid grid-flow-col auto-cols-max mx-auto my-0 max-w-screen-lg">
-      <div className="col-auto max-w-xs h-48">
+    <div className="lg:grid lg:grid-flow-col lg:auto-cols-max sm:flex md:flex mx-auto my-0 max-w-screen-lg">
+      <div className="col-auto lg:max-w-xs h-48 sm:min-w-full md:min-w-full">
         <form
           onSubmit={(event: FormEvent<HTMLFormElement>): void => {
             event.preventDefault();
