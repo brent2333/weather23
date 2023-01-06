@@ -2,8 +2,9 @@ import { FormEvent } from "react";
 import { useGetCurrentWeatherQuery } from './weatherApiService';
 import { useAppSelector, useAppDispatch } from "./hooks";
 import { current } from './weatherSearchSlice';
+import Results from './Results';
 const Dashboard = () => {
-  const selectedCurrentWeather = useAppSelector((state) => state.selectedCurrentWeather);
+  const selectedCurrentWeather = useAppSelector((state) => state.weatherSearch.value.currentLocation);
   let { data: currentWeather } = useGetCurrentWeatherQuery(selectedCurrentWeather);
   currentWeather = currentWeather ?? undefined;
   const dispatch = useAppDispatch();
@@ -26,6 +27,7 @@ const Dashboard = () => {
 
         <button>Submit</button>
       </form>
+      <Results current={currentWeather} />
     </div>
   );
 };

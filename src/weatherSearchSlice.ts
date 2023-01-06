@@ -4,7 +4,7 @@ export const weatherSearchSlice = createSlice({
     name: "weatherSearch",
     initialState: {
         value: {
-            currentLocation: {},
+            currentLocation: "",
         }
     },
     reducers: {
