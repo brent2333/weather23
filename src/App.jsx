@@ -4,6 +4,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import store from "./store";
 import { Provider } from "react-redux";
 import Dashboard from "./Dashboard";
+import Header from './Header';
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,12 +19,10 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <div>
+      <Header />
       <BrowserRouter>
           <Provider store={store}>
             <QueryClientProvider client={queryClient}>
-            <header>
-              <Link to="/">Weather 23</Link>
-            </header>
             <Routes>
               <Route path="/" element={<Dashboard />} />
             </Routes>
