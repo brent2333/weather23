@@ -10,6 +10,9 @@ export const weatherSearchSlice = createSlice({
     reducers: {
         current: (state, action) => {
             state.value.currentLocation = action.payload
+        },
+        forecast: (state, action) => {
+            state.value.currentLocation = action.payload
         }
     }
 })

@@ -9,7 +9,7 @@ const user = {
   };
   const navigation = [{ name: "Dashboard", href: "/", current: true }];
   const userNavigation = [
-    { name: "My LinkedIn", href: "https://www.linkedin.com/in/brent-lawson-486529a/" },
+    { name: "My LinkedIn", href: "https://www.linkedin.com/in/brent-lawson-486529a/", target: "_blank" },
     { name: "About Me", href: "/about" },
     { name: "How it's Made", href: "#" },
   ];
@@ -165,6 +165,7 @@ const user = {
                     key={item.name}
                     as="a"
                     href={item.href}
+                    target={item.target}
                     className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
                     >
                     {item.name}

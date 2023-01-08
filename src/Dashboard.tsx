@@ -1,30 +1,30 @@
-import { FormEvent } from "react";
+import { FormEvent, Fragment } from "react";
 import { useGetCurrentWeatherQuery } from "./weatherApiService";
 import { useAppSelector, useAppDispatch } from "./hooks";
 import { current } from "./weatherSearchSlice";
 import Results from "./Results";
+import Forecast from "./Forecast";
 const Dashboard = () => {
-  const selectedCurrentWeather = useAppSelector(
+  const selectedCurrentLocation = useAppSelector(
     (state) => state.weatherSearch.value.currentLocation
   );
   let { data: currentWeather } = useGetCurrentWeatherQuery(
-    selectedCurrentWeather
+    selectedCurrentLocation
   );
   currentWeather = currentWeather ?? undefined;
   const dispatch = useAppDispatch();
 
   return (
-    <div className="lg:grid lg:grid-flow-col lg:auto-cols-max sm:flex md:flex mx-auto my-0 max-w-screen-lg">
+    <Fragment>
       <div className="col-auto lg:max-w-xs h-48 sm:min-w-full md:min-w-full">
         <form
           onSubmit={(event: FormEvent<HTMLFormElement>): void => {
             event.preventDefault();
             const formData = new FormData(event.target as HTMLFormElement);
             const loc = formData.get("location")?.toString() ?? "";
-            console.log("SUBMIT", loc);
             dispatch(current(loc));
           }}
-          className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-6 m-4"
+          className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-6 m-6"
         >
           <div className="mb-4">
             <label
@@ -46,11 +46,14 @@ const Dashboard = () => {
         </form>
       </div>
       {currentWeather ? (
-      <div className="col-auto h-48">
-      <Results current={currentWeather} />
-      </div>
-      ): null}
-    </div>
+        <div>
+              <Results
+                current={currentWeather}
+              />
+          <Forecast location={selectedCurrentLocation} />
+        </div>
+      ) : null}
+    </Fragment>
   );
 };
 

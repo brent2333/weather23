@@ -1,11 +1,12 @@
 import { Fragment } from "react";
-import { CurrentWeatherResponse } from "./APIResponseTypes";
+import { CurrentWeatherResponse, SharedLocationObject } from "./APIResponseTypes";
 import { CloudIcon, SunIcon } from "@heroicons/react/24/solid";
 
-const Results = ({ current }: CurrentWeatherResponse) => {
+const Results = ({ current }: CurrentWeatherResponse, loc: SharedLocationObject) => {
   return (
     <Fragment>
-      <div className="lg:grid lg:grid-flow-col lg:auto-cols-max h-48 sm:flex md:flex">
+      <h2 className="mx-6 text-white w-full basis-full">Current Weather</h2>
+      <div className="lg:grid lg:grid-flow-col sm:flex md:flex mx-auto my-0 max-w-screen-lg">
         <div className="shadow-md rounded m-4 text-3xl font-bold center-flex p-8 bg-gray-300">
           {current?.condition.text}&nbsp;
           {current?.condition.icon ? (
@@ -23,7 +24,6 @@ const Results = ({ current }: CurrentWeatherResponse) => {
           </div>
         ) : null}
       </div>
-      <div className="grid grid-flow-col auto-cols-max h-48"></div>
     </Fragment>
   );
 };
