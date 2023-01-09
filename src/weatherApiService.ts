@@ -3,7 +3,7 @@ import params from '../params';
 import { CurrentWeatherResponse, ForecastWeatherReponse } from './APIResponseTypes';
 const key = params.key;
 const aqi = params.aqi;
-const days = '5';
+const days = params.days;
 export const weatherApi = createApi({
     reducerPath: "weatherApi",
     baseQuery: fetchBaseQuery({ baseUrl: "https://api.weatherapi.com/v1"}),

@@ -27,7 +27,7 @@ const user = {
             <div className="flex h-16 items-center justify-between">
                 <div className="flex items-center">
                 <div className="flex-shrink-0">
-                    <h1 className="font-semibold text-xl text-white tracking-tight">React Weather</h1>
+                    <h1 className="font-semibold text-xl text-white tracking-tight">Weather23</h1>
                 </div>
                 <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">

@@ -23,6 +23,14 @@ const Results = ({ current }: CurrentWeatherResponse, loc: SharedLocationObject)
             {current?.temp_c} <span>&#176;</span>C
           </div>
         ) : null}
+        {current?.feelslike_f ? (
+          <div className="shadow-md rounded  m-4 text-3xl pb-8 pt-2 px-6 bg-gray-300">
+            <span className="text-base">Feels like</span>
+            <div className="font-extrabold">{current?.feelslike_f} <span>&#176;</span>F</div>
+            <div className="font-extrabold">{current?.feelslike_c} <span>&#176;</span>C</div>
+
+          </div>
+        ) : null}
       </div>
     </Fragment>
   );

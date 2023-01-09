@@ -24,7 +24,7 @@ const Dashboard = () => {
             const loc = formData.get("location")?.toString() ?? "";
             dispatch(current(loc));
           }}
-          className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-6 m-6"
+          className="bg-gray-300 shadow-md rounded px-8 pt-6 pb-6 m-6 lg:max-w-md md:max-w-sm sm:max-w-full"
         >
           <div className="mb-4">
             <label
