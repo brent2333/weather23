@@ -1,0 +1,43 @@
+// Vitest Snapshot v1
+
+exports[`renders correctly with weather data 1`] = `
+<DocumentFragment>
+  <h2
+    class="mx-6 text-white w-full basis-full"
+  >
+    Current Weather
+  </h2>
+  <div
+    class="lg:grid lg:grid-flow-col sm:flex md:flex mx-auto my-0 max-w-screen-lg"
+  >
+    <div
+      class="shadow-md rounded m-4 text-3xl font-bold center-flex p-8 bg-gray-300"
+    >
+      Clear 
+      <img
+        alt="//cdn.weatherapi.com/weather/64x64/night/113.png"
+        data-testid="condimg"
+        src="https://cdn.weatherapi.com/weather/64x64/night/113.png"
+      />
+    </div>
+    <div
+      class="shadow-md rounded m-4 text-3xl font-extrabold center-flex p-8 bg-gray-300"
+    >
+      44.6 
+      <span>
+        °
+      </span>
+      F
+    </div>
+    <div
+      class="shadow-md rounded  m-4 text-3xl font-extrabold center-flex p-8 bg-gray-300"
+    >
+      7 
+      <span>
+        °
+      </span>
+      C
+    </div>
+  </div>
+</DocumentFragment>
+`;

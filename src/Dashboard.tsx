@@ -46,7 +46,7 @@ const Dashboard = () => {
         </form>
       </div>
       {currentWeather ? (
-        <div>
+        <div data-testid="results-container">
               <Results
                 current={currentWeather}
               />

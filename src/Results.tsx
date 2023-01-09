@@ -10,7 +10,7 @@ const Results = ({ current }: CurrentWeatherResponse, loc: SharedLocationObject)
         <div className="shadow-md rounded m-4 text-3xl font-bold center-flex p-8 bg-gray-300">
           {current?.condition.text}&nbsp;
           {current?.condition.icon ? (
-          <img src={`https:${current?.condition.icon}`} alt={current?.condition.icon} />
+          <img src={`https:${current?.condition.icon}`} alt={current?.condition.icon} data-testid="condimg" />
           ) : null}
         </div>
         {current?.temp_f ? (
