@@ -28,12 +28,6 @@ const filterHours = (hours: Hour[]) => {
 const Hourly = (forecastResponse: ForecastWeatherReponse) => {
   const hours = forecastResponse.forecast.forecastday[0].hour;
   const filteredHours = filterHours(hours);
-  const graphHours:string[] = [];
-  const graphTemps:string[] = [];
-  filteredHours.forEach((h) => {
-    graphHours.push(getHour(h.time));
-    graphTemps.push(String(h.temp_f))
-  });
   const graphData = filteredHours.map((h) => {
     return {
       x: getHour(h.time),
@@ -41,10 +35,9 @@ const Hourly = (forecastResponse: ForecastWeatherReponse) => {
     };
   });
   return (
-    <Fragment>
+    <div className="lg:block md:block sm:hidden">
       <h2 className="mx-4 text-white">Hourly</h2>
-      {/* {JSON.stringify(graphData)} */}
-      <div className="min-w-full max-h-96">
+      <div className="min-w-full max-h-96 mt-100">
       <VictoryChart 
       theme={VictoryTheme.material}
       width={600}
@@ -52,13 +45,25 @@ const Hourly = (forecastResponse: ForecastWeatherReponse) => {
       containerComponent={
         <VictoryContainer
           preserveAspectRatio="none"
+          style={{marginTop: "-70px"}}
         />
       }>
-        <VictoryAxis tickValues={graphHours}/>
         <VictoryAxis
-        dependentAxis
-        tickValues={graphTemps} 
-        tickFormat={(tick) => `${Math.round(tick)}°`}/>
+          tickValues={graphData}
+          style={{
+            grid: { stroke: "#777" },
+            ticks: {stroke: "grey", size: 5},
+            tickLabels: {fontSize: 6, padding: 4, fill: "#ddd"}
+          }}/>
+        <VictoryAxis
+          dependentAxis
+          tickFormat={(tick) => `${Math.round(tick)}°`}
+          style={{
+            grid: { stroke: "#777" },
+            ticks: {stroke: "grey", size: 5},
+            tickLabels: {fontSize: 6, padding: 4, fill: "#ddd"}
+          }}
+        />
         <VictoryLine
           style={{
             data: { stroke: "#4F46E5" },
@@ -67,7 +72,7 @@ const Hourly = (forecastResponse: ForecastWeatherReponse) => {
         />
       </VictoryChart>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
