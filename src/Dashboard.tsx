@@ -4,6 +4,7 @@ import { useAppSelector, useAppDispatch } from "./hooks";
 import { current } from "./weatherSearchSlice";
 import Results from "./Results";
 import Forecast from "./Forecast";
+
 const Dashboard = () => {
   const selectedCurrentLocation = useAppSelector(
     (state) => state.weatherSearch.value.currentLocation
@@ -47,9 +48,7 @@ const Dashboard = () => {
       </div>
       {currentWeather ? (
         <div data-testid="results-container">
-              <Results
-                current={currentWeather}
-              />
+          <Results current={currentWeather} />
           <Forecast location={selectedCurrentLocation} />
         </div>
       ) : null}

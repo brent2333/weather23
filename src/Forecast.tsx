@@ -1,11 +1,9 @@
 import { Fragment, useState } from "react";
 import { SharedLocationObject } from "./APIResponseTypes";
 import { useGetFutureForecastsQuery } from "./weatherApiService";
-
+import Hourly from './Hourly';
 const Forecast = (loc: SharedLocationObject) => {
-const { data: currentForecast } = useGetFutureForecastsQuery(
-    loc.location
-    );
+const { data: currentForecast } = useGetFutureForecastsQuery(loc.location);
 const [unit, setUnit] = useState(true)
   return (
     <div>
@@ -47,6 +45,11 @@ const [unit, setUnit] = useState(true)
         })
       )}
     </div>
+    {currentForecast ? (
+    <Hourly forecast={currentForecast}/>
+    ) : (
+      null 
+    )}
     </div>
   );
 };
