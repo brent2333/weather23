@@ -1,9 +1,12 @@
-import { FormEvent, Fragment } from "react";
+import { FormEvent, Fragment, lazy, Suspense } from "react";
 import { useGetCurrentWeatherQuery } from "./weatherApiService";
 import { useAppSelector, useAppDispatch } from "./hooks";
 import { current } from "./weatherSearchSlice";
-import Results from "./Results";
-import Forecast from "./Forecast";
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
+
+const Results = lazy(() => import("./Results"));
+const Forecast = lazy(() => import("./Forecast"));
+
 
 const Dashboard = () => {
   const selectedCurrentLocation = useAppSelector(
@@ -48,8 +51,23 @@ const Dashboard = () => {
       </div>
       {currentWeather ? (
         <div data-testid="results-container">
-          <Results current={currentWeather} />
+          <Suspense
+              fallback={
+                <div className="items-center justify-center flex p-4">
+                  <div className="w-10 h-10 animate-spin"><ArrowPathIcon/></div>
+                </div>
+              }>
+              <Results current={currentWeather} />
+          </Suspense>
+          <Suspense
+              fallback={
+                <div className="items-center justify-center flex p-4">
+                  <div className="w-10 h-10 animate-spin"><ArrowPathIcon/></div>
+                </div>
+              }
+            >
           <Forecast location={selectedCurrentLocation} />
+          </Suspense>
         </div>
       ) : null}
     </Fragment>
