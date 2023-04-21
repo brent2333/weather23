@@ -5,7 +5,7 @@ const user = {
     name: "Brent Lawson",
     email: "reasonevidence@zoho.com",
     imageUrl:
-      "https://media.licdn.com/dms/image/C4D03AQEWfbT9vkI2hQ/profile-displayphoto-shrink_200_200/0/1573653474813?e=1678320000&v=beta&t=xnB0NS_u_Q0Abwlq5tDskAja2n06PBoK-9ELf_oN958"
+      "https://thumbs2.imgbox.com/46/fc/kitR8uva_t.jpeg"
   };
   const navigation = [{ name: "Dashboard", href: "/", current: true }];
   const userNavigation = [
