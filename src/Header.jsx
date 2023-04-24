@@ -10,9 +10,8 @@ const user = {
   const navigation = [{ name: "Dashboard", href: "/", current: true }];
   const userNavigation = [
     { name: "My LinkedIn", href: "https://www.linkedin.com/in/brent-lawson-486529a/", target: "_blank" },
-    { name: "About Me", href: "/about" },
-    { name: "How it's Made", href: "#" },
-  ];
+    { name: "About Me", href: "/about" }
+];
   
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
@@ -49,7 +48,14 @@ const user = {
                     </div>
                 </div>
                 </div>
- 
+                <div className="flex items-center justify-between">
+                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/a5/8a/q05oTpB7_t.png" alt="react" /></div>
+                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/3c/d5/XzfBfu9v_t.png" alt="redux"/></div>
+                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/a9/27/bl8taaoQ_t.png" alt="tailwind"/></div>
+                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/33/9d/pQpuCba7_t.png" alt="typescript"/></div>
+                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/b4/5b/xgVChdbl_t.png" alt="vite"/></div>
+                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/03/af/cFDUogpV_t.png" alt="vitest"/></div>
+                </div>
                 <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
                 <h2 className="text-white whitespace-no-wrap text-sm">Brent Lawson - Web Developer</h2>
