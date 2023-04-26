@@ -48,13 +48,13 @@ const user = {
                     </div>
                 </div>
                 </div>
-                <div className="flex items-center justify-between">
-                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/a5/8a/q05oTpB7_t.png" alt="react" /></div>
-                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/3c/d5/XzfBfu9v_t.png" alt="redux"/></div>
-                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/a9/27/bl8taaoQ_t.png" alt="tailwind"/></div>
-                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/33/9d/pQpuCba7_t.png" alt="typescript"/></div>
-                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/b4/5b/xgVChdbl_t.png" alt="vite"/></div>
-                    <div className="rounded-md overflow-hidden"><img className="h-14 w-14" src="https://thumbs2.imgbox.com/03/af/cFDUogpV_t.png" alt="vitest"/></div>
+                <div className="flex items-center justify-between place-content-between space-x-0.5">
+                    <div className="rounded-md overflow-hidden h-10 w-10 md:h-12 md:w-12 lg:h-18 lg:w-18"><img src="https://thumbs2.imgbox.com/a5/8a/q05oTpB7_t.png" alt="react"/></div>
+                    <div className="rounded-md overflow-hidden h-10 w-10 md:h-12 md:w-12 lg:h-18 lg:w-18"><img src="https://thumbs2.imgbox.com/3c/d5/XzfBfu9v_t.png" alt="redux"/></div>
+                    <div className="rounded-md overflow-hidden h-10 w-10 md:h-12 md:w-12 lg:h-18 lg:w-18"><img className="h-14 " src="https://thumbs2.imgbox.com/a9/27/bl8taaoQ_t.png" alt="tailwind"/></div>
+                    <div className="rounded-md overflow-hidden h-10 w-10 md:h-12 md:w-12 lg:h-18 lg:w-18"><img className="h-14 " src="https://thumbs2.imgbox.com/33/9d/pQpuCba7_t.png" alt="typescript"/></div>
+                    <div className="rounded-md overflow-hidden h-10 w-10 md:h-12 md:w-12 lg:h-18 lg:w-18"><img className="h-14 " src="https://thumbs2.imgbox.com/b4/5b/xgVChdbl_t.png" alt="vite"/></div>
+                    <div className="rounded-md overflow-hidden h-10 w-10 md:h-12 md:w-12 lg:h-18 lg:w-18"><img className="h-14 " src="https://thumbs2.imgbox.com/03/af/cFDUogpV_t.png" alt="vitest"/></div>
                 </div>
                 <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
